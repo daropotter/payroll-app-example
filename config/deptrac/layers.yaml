@@ -1,0 +1,40 @@
+parameters:
+  paths:
+    - ../../src
+    - ../../vendor
+  exclude_files:
+    - '#.*test.*#'
+  layers:
+    - name: Presentation
+      collectors:
+        - type: className
+          regex: '.*\\Presentation\\.*'
+    - name: Application
+      collectors:
+        - type: className
+          regex: '.*\\Application\\.*'
+    - name: Domain
+      collectors:
+        - type: className
+          regex: '.*\\Domain\\.*'
+    - name: Infrastructure
+      collectors:
+        - type: className
+          regex: '.*\\Infrastructure\\.*'
+    - name: Vendor
+      collectors:
+        - type: directory
+          regex: '.*/vendor/.*'
+  ruleset:
+    Presentation:
+      - Application
+      - Infrastructure
+      - Vendor
+    Application:
+      - Domain
+      - Vendor
+    Domain:
+    Infrastructure:
+      - Domain
+      - Vendor
+    Vendor:

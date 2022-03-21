@@ -1,0 +1,7 @@
+controllers:
+    resource: ../../src/Payroll/Presentation/
+    type: annotation
+
+kernel:
+    resource: ../../src/Common/Infrastructure/Symfony/Kernel.php
+    type: annotation

@@ -1,0 +1,18 @@
+parameters:
+  paths:
+    - ../../src
+  exclude_files:
+    - '#.*test.*#'
+  layers:
+    - name: Common
+      collectors:
+        - type: directory
+          regex: 'src/Common'
+    - name: Payroll
+      collectors:
+        - type: directory
+          regex: 'src/Payroll'
+  ruleset:
+    Common:
+    Payroll:
+      - Common
