@@ -11,12 +11,12 @@
 
 ```bash
 composer install
-php bin/console doctrine:migrations:migrate
 make run-db
+php bin/console doctrine:migrations:migrate
 symfony serve
 ```
 
-And go to http://localhost:8000
+And go to http://localhost:8000/report
 
 To actually get any data, run `example_data.sql` from `migrations` folder against
 `localhost` instance of PostgreSQL. Default port.
